@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Arvauspeli!</h1>
-    <button id="start" disabled onclick="initGame()">Arvaa kuka!</button>
+    <h2>Arvaa kuka!</h2>
+    <button id="start" disabled onclick="initGame()">Aloita!</button>
     <div hidden id="gameForm">
-        <img id="image" src="">
+        <div id="imgContainer">
+            <img id="image" src="">
+        </div>
         <div id="options">
             <div class="optionsRow">
                 <button onclick="clicked(event)" id="button1"></button>

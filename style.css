@@ -9,11 +9,38 @@ body {
 button {
     border: none;
     border-radius: 0.25em;
-    background-color: royalblue;
+    background-color: hsl(225, 73%, 57%);
     color: #FFF;
     padding: 0.5em;
     margin: 0.25em;
     width: 12em;
+    transition: background-color 0.1s;
+    cursor: pointer;
+    &:hover {
+        background-color: hsl(225, 80%, 40%);
+    }
+}
+
+#imgContainer {
+    background-color: #CCC;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    display: inline-block;
+    border-radius: 1em;
+    transition: background-color 0.5s;
+    &.fail {
+        background-color: red;
+        transition: none;
+    }
+    &.success {
+        background-color: green;
+        transition: none;
+    }
+    img {
+        border-radius: 0.5em;
+        width: 10em;
+        max-height: 12em;
+    }
 }
 
 #options {
@@ -25,4 +52,22 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@keyframes failFlash {
+    from {
+        background-color: darkred;
+    }
+    to {
+        background-color: #CCC;
+    }
+}
+
+@keyframes successFlash {
+    from {
+        background-color: green;
+    }
+    to {
+        background-color: #CCC;
+    }
 }
