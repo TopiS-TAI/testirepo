@@ -1,8 +1,9 @@
 imgContEl = document.getElementById('imgContainer')
 imgEl = document.getElementById('image')
-gameFormEl = document.getElementById('gameForm')
+// gameFormEl = document.getElementById('gameForm')
 startEl = document.getElementById("start")
 messageEl = document.getElementById("message")
+bodyEl = document.getElementsByTagName("body")
 buttonEls = []
 for (let i = 1; i < 5; i++) {
     buttonEls.push(document.getElementById('button' + i))
@@ -39,8 +40,10 @@ function initGame() {
     messageEl.innerHTML = ''
     mix = arrayShuffle(students)
     mix = mix.filter(s => s.image)
-    gameFormEl.removeAttribute('hidden')
+    // gameFormEl.removeAttribute('hidden')
     startEl.setAttribute('hidden', true)
+    bodyEl.classList.remove('running', 'stopped')
+    bodyEl.classList.add('running')
     fillForm()
 }
 
@@ -64,8 +67,9 @@ function gameOver() {
         failString += fail.name + ', '
     }
     messageEl.innerHTML += `Väärät arvaukset: ${failString}`
-    gameFormEl.setAttribute('hidden', true)
+    // gameFormEl.setAttribute('hidden', true)
     start.removeAttribute('hidden')
+    bodyEl.classList.remove('running', 'stopped')
 }
 
 function clicked(e) {

@@ -54,6 +54,18 @@ button {
     justify-content: center;
 }
 
+.stopped {
+    #gameForm {
+        display: hidden;
+    }
+}
+
+.running {
+    #gameForm {
+        display: initial;
+    }
+}
+
 @keyframes failFlash {
     from {
         background-color: darkred;
